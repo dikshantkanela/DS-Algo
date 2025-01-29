@@ -6,7 +6,7 @@ bool searchElement(int arr[], int size, int key){
             return true; // will be parsed as 1
         };
     }
-    return false; // parsed as 0
+    return false; // parsed as 0    
 }
 int main(){
     int size = 7;
