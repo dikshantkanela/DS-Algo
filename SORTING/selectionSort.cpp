@@ -5,7 +5,7 @@ void selectionSort(int arr[], int size){
        int minimum = i;
        for(int j=i;j<size;j++){
           if(arr[j]<arr[minimum]){
-            minimum = j;
+            minimum = j; // ye wala naya minimum hai 
            
           }
        }
