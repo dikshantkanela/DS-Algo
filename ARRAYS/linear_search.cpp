@@ -1,20 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 bool searchElement(int arr[], int size, int key){
-    for(int i = 0; i<size; i++){
+    for(int i = 0 ; i<size; i++){
         if(arr[i]==key){
-            return true; // will be parsed as 1
-        };
+            return true; 
+        } 
     }
-    return false; // parsed as 0    
+    return false;
 }
 int main(){
+    int arr[7] ={3,23,21,32,43,45,65};
     int size = 7;
-    int nums[7] = {21,23,54,-21,30,12,34};
-    int key;
-    cout<<"Enter element to search : ";
-    cin>>key;
-    cout<<searchElement(nums,size,key);
+    int target;
+    cout<<"Enter element to search for : ";
+    cin>>target;
+    cout<< searchElement(arr,size,target);
+    
 
     return 0;
 }
