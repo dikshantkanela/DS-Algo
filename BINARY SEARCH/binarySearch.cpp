@@ -12,7 +12,7 @@ int binarySearch(int arr[],int size, int key){
             start = mid+1; //for splitting and searching in the right subarray
 
         }
-        else{   
+        else{
             end = mid-1;  //for splitting and searching in the left subarray
         }
         mid = start + (end-start)/2;
@@ -21,7 +21,7 @@ int binarySearch(int arr[],int size, int key){
 }
 int main(){
     int odd[7] = {12,23,26,30,45,50,67};
-    int even[6] = {2,10,15,22,31,67};
+    int even[6] = {2,10,15,22,31,40};
     int key;
     cin>>key;
     //search in odd array
