@@ -12,7 +12,7 @@ int binarySearch(int arr[],int size, int key){
             start = mid+1; //for splitting and searching in the right subarray
 
         }
-        else{
+        else{   
             end = mid-1;  //for splitting and searching in the left subarray
         }
         mid = start + (end-start)/2;
