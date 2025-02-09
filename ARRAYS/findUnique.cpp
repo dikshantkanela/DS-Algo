@@ -6,7 +6,7 @@ int findUniqueBruteForce(int *arr, int size)
     
     for(int i = 0; i<size;i++){
         int extraCount = 0;
-        for(int j = 0; j<size;j++){
+        for(int j = 0; j<size;j++){ // cannot do j = i+1 because agar piche hua same element toh?
            if(i!=j && arr[i]==arr[j]){
                extraCount++;
                break;

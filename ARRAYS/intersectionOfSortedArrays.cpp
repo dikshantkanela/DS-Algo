@@ -12,7 +12,7 @@ vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, i
         else if (arr1[i] > arr2[j]) {
             j++;
         } 
-        else {
+        else { // if (arr1[i]==arr2[j])
             answer.push_back(arr1[i]);
             i++;
             j++;
