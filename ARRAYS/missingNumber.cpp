@@ -7,7 +7,7 @@ public:
     // Method 1: Using Sum Formula
     int missingNumberSum(vector<int>& nums) {
         int n = nums.size();
-        int sum = (n * (n + 1)) / 2; // Sum of first n natural numbers
+        int sum = n*(n+1)/2; // Sum of first n natural numbers
         int arrSum = 0;
 
         for (int num : nums) {
