@@ -27,10 +27,28 @@ int betterApproach(int arr[], int n){
     }
   return maximum;
 }
+
+int KadaneAlgo(int arr[], int n){
+    int maximum = INT_MIN;
+    int currSum = 0;
+     
+    for(int i=0;i<n;i++){
+        currSum+=arr[i];
+        maximum = max(currSum,maximum);
+        if(currSum<0){
+            currSum = 0;
+        }
+        
+        
+    }
+  return maximum;
+}
+
 int main(){
     int arr[8] = {-2,-3,4,-1,-2,1,5,-3};
     int size = 8;
     cout<<"Through brute force : " << bruteForce(arr,size)<<endl;
     cout<<"Through better approach : "<< betterApproach(arr,size)<<endl;
+    cout<<"Through Kadane's Algo : "<< KadaneAlgo(arr,size)<<endl;
     return 0;
 }
