@@ -44,11 +44,44 @@ int KadaneAlgo(int arr[], int n){
   return maximum;
 }
 
+vector<int> startEndOfMaxSubarray(int arr[],int n){
+    int maximum = INT_MIN;
+    int currSum = 0;
+    int s = -1;
+    int e = -1;
+    
+    for(int i=0;i<n;i++){
+
+        if(currSum==0){ //JUST ADD THIS CONDN INITIALLY!
+            s = i;
+        }
+        
+        currSum+=arr[i]; // UPDATE CURRENT SUM
+
+        
+        if(currSum>maximum){
+            maximum = currSum;  //COMPARING WITH MAXIMUM SUM
+            e = i;
+        }
+        if(currSum<0){
+            currSum = 0;  //RESET CURRENT SUM IF EQUAL TO 0
+        }
+    }
+
+    vector<int> res = {s,e};
+
+    return res;
+}
 int main(){
     int arr[8] = {-2,-3,4,-1,-2,1,5,-3};
     int size = 8;
     cout<<"Through brute force : " << bruteForce(arr,size)<<endl;
     cout<<"Through better approach : "<< betterApproach(arr,size)<<endl;
     cout<<"Through Kadane's Algo : "<< KadaneAlgo(arr,size)<<endl;
+    vector<int> startEnd = startEndOfMaxSubarray(arr,size);
+    for(int i = 0; i<startEnd.size();i++){
+        cout<<startEnd[i]<<" ";
+    }
+
     return 0;
 }
