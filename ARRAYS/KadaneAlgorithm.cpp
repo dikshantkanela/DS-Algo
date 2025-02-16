@@ -23,7 +23,7 @@ int betterApproach(int arr[], int n){
         for(int j=i;j<n;j++){ //INSTEAD OF CREATING EACH SUBARRAY AND THEN TAKING THE SUM, JUST KEEP ON SUMMING THE ELEMENTS AND THEN COMPARE SUM WITH THE CURRENT MAXIMUM SUM! 
           sum+=arr[j];
           maximum = max(sum,maximum);
-        }
+        }   
     }
   return maximum;
 }
