@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int mySqrt(int x) {
@@ -19,6 +19,7 @@ int mySqrt(int x) {
         else {
             return mid; // Perfect square found
         }
+        mid = start+(end-start)/2;    
     }
     return ans; 
 }
