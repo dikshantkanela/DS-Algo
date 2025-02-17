@@ -10,7 +10,7 @@ int pivotElement(int arr[], int size){
             }
 
             else{
-                end = mid;  //MEANS WE ARE ON THE FIRST LINE
+                end = mid;  //MEANS WE ARE ON THE SECOND LINE
             }
         mid = start+(end-start)/2;
         }
