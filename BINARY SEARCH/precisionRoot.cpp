@@ -32,10 +32,10 @@ double precisionRoot(int n, int precision, int tempRoot){
     for(double i=0;i<precision;i++){
         factor = factor/10; // 0.1 0.01 0.001
 
-        double j = ans;
-        while(j*j<n){
-            ans = j; //could be the root
-            j=j+factor;
+        double root = ans;
+        while(root*root<n){
+            ans = root; //could be the root
+            root=root+factor;
         }
     }
     return ans;
