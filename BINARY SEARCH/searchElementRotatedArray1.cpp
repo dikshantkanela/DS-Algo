@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+// LOGIC IS TO FIND THE PIVOT (LOWEST ELEMENT) AND THEN PERFORM BINARY SEARCH ON LEFT AND RIGHT SIDES OF ARRAY
 int findPivot(vector<int>& arr, int n) {
     int start = 0;
     int end = n - 1;
