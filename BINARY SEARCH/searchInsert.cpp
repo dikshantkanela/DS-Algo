@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// SAME AS LOWER BOUND QUESTION
 int searchInsert(vector<int>& arr, int m)
 {
     // WRITE YOUR CODE HERE.
