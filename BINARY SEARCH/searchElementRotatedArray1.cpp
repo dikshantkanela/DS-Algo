@@ -6,7 +6,7 @@ int findPivot(vector<int>& arr, int n) {
     int start = 0;
     int end = n - 1;
     int mid = start + (end - start) / 2;
-    
+    // JAB ARRAY MAI DUPLICATES NA HO TO PIVOT NIKAALNA EASY HAI
     while (start < end) {
         if (arr[mid] >= arr[0]) {
             start = mid + 1;
@@ -15,7 +15,7 @@ int findPivot(vector<int>& arr, int n) {
         }
         mid = start + (end - start) / 2;
     }
-    return start;  // Pivot index
+    return start;  // Pivot index (you cam return both start or end ans will be same)
 }
 
 int binarySearch(vector<int>& arr, int start, int end, int k) {
@@ -23,7 +23,7 @@ int binarySearch(vector<int>& arr, int start, int end, int k) {
     
     while (start <= end) {
         if (arr[mid] == k) {
-            return mid;  // Element found
+            return mid;  // Element found   
         } else if (k > arr[mid]) {
             start = mid + 1;  // Search in the right part
         } else {
@@ -38,7 +38,7 @@ int search(vector<int>& arr, int n, int k) {
     // Find the pivot index (smallest element)
     int pivotElementIndex = findPivot(arr, n);
 
-    // If the element is in the right part of the rotated array
+    // If the element is in the right part of the rotated array 
     if (k >= arr[pivotElementIndex] && k <= arr[n - 1]) {
         return binarySearch(arr, pivotElementIndex, n - 1, k);
     }
