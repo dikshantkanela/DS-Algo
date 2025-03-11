@@ -27,6 +27,12 @@ void insertAtHead(Node* &head, int data){
    head = temp;
 }
 
+void insertAtTail(Node* &tail, int data){
+    Node*temp = new Node(data);
+    tail->next = temp;
+    tail = temp;
+}
+
 int main(){
     // Creating nodes
     Node* node1 = new Node(5);
@@ -34,16 +40,25 @@ int main(){
 
     // Linking nodes
     node1->next = node2; // Connect node1 to node2
-
+  
     // Head of the list
     Node* head = node1;
+
+    // Tail of the list
+
+    Node* tail = node2;
 
     // Printing the linked list
     print(head);  // 5 -> 10 ->  NULL 
     cout<<endl;
 
-    // Inserting at head
-    insertAtHead(head,25);
-    print(head);// 25 -> 5 -> 10 ->  NULL
+    // // Inserting at head
+    // insertAtHead(head,25);
+    // print(head);// 25 -> 5 -> 10 ->  NULL
+
+    // Inserting at tail
+    insertAtTail(tail,35);
+    print(head); 
+
     return 0;
 }
