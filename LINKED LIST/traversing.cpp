@@ -5,7 +5,7 @@ class Node{
     int data;
     Node* next;
 
-    Node(int data){
+    Node(int data){ // constructor
         this -> data = data;
         this -> next = NULL;
     }
@@ -42,11 +42,14 @@ void insertAtPosition(Node* &head, Node* &tail ,int position, int data){
     Node *temp = head;
     int count = 1;
 
-    while(count<position-1){
+    while(count<position-1 && temp->next!=NULL){
         temp = temp->next;
         count++;
     }
-
+   if(count<position-1){
+    cout<<"Invalid posiiton!";
+    return;
+   }
     if(temp->next == NULL){ // that means we are inserting at tail!
         insertAtTail(tail,data);
         return;
@@ -56,6 +59,44 @@ void insertAtPosition(Node* &head, Node* &tail ,int position, int data){
     nodeToInsert->next = temp->next;
     temp->next = nodeToInsert;
 
+}
+
+void deleteAtPosition(Node* &head, Node* &tail, int position){
+    if(position == 1){ // manages for head
+       Node* temp = head;
+       head = temp->next; // new head since the head was deleted
+       delete temp; // free memory
+    }
+
+
+
+    else{
+        Node* prev = head;
+        int count = 1;
+        // to find prev position from element to be deleted 
+        while(count<position-1){
+            prev = prev->next;
+            count++;
+        }
+
+        if(prev->next == NULL){ // edge case
+            cout<<"Invalid position"<<endl;
+            return;
+        }
+      
+        Node* nodeToDelete = prev->next;
+        prev->next = nodeToDelete->next;
+        
+       
+        if(nodeToDelete->next == NULL){ // ensures updating the tail when tail is deleted
+            tail = prev;
+            prev->next = NULL;
+        }
+
+        
+        delete nodeToDelete;
+      
+    }
 }
 
 int main(){
@@ -72,7 +113,7 @@ int main(){
 
     // Tail of the list
 
-    Node* tail = node2;
+    Node* tail = node3;
 
     // Printing the linked list
     // print(head);  // 5 -> 10 ->  NULL 
@@ -89,7 +130,11 @@ int main(){
     // print(head); 
 
     // Insert at a position 
-    insertAtPosition(head,tail,4,55);
-    print(head); 
+    // insertAtPosition(head,tail,4,55);
+    // print(head); 
+    deleteAtPosition(head,tail,4);
+    print(head);
+    cout<<endl;
+    cout<<"Tail is : "<<tail->data;
     return 0;
 }
