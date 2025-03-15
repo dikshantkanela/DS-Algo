@@ -17,7 +17,7 @@ class Node{
 void print(Node* &head){
     Node* temp = head;
     while(temp!=NULL){
-        cout<<temp->data<<" -> "; // print the data of node
+        cout<<temp->data<<" <--> "; // print the data of node
         temp = temp->next;
 
     }
@@ -96,7 +96,7 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position){
     
 }
 
-    void deleteAtPosition(Node* &head, Node* &tail, int position){
+void deleteAtPosition(Node* &head, Node* &tail, int position){
         if (head == NULL) {
             cout << "List is empty!" << endl;
             return;
