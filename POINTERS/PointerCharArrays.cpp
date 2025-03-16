@@ -13,4 +13,4 @@ int main(){
     // char *pt = &character;
     // cout<<pt; // c and random stuff untill \0 found : c▒☻♂♦
     return 0;
-}
+}   
