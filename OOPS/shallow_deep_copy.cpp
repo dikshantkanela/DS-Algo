@@ -9,8 +9,6 @@ public:
     // DEFAULT CONSTRUCTOR
     Car() {
         cout << "DEFAULT CONSTRUCTOR!" << endl;
-        // model = nullptr;
-        // modelYear = 0;
     }
 
     // PARAMETERIZED CONSTRUCTOR (Deep Copy)
@@ -26,9 +24,15 @@ public:
         cout << "COPY CONSTRUCTOR (Deep Copy) called!" << endl;
         this->model = new char[strlen(myCar.model) + 1]; // Allocate new memory
         strcpy(model, myCar.model); // Copy content
-        
+
         this->modelYear = myCar.modelYear;
     }
+
+    // COPY CONSTRUCTOR SHALLOW COPY : 
+    // Car(Car &myCar){
+    //     this->model = myCar.model;
+    //     this->modelYear = myCar.modelYear;
+    // }
 
     // // DESTRUCTOR (To Free Allocated Memory)
     // ~Car() {
@@ -39,7 +43,7 @@ public:
     // Function to safely update model
     void setModel(const char* newModel) {
         delete[] model; // Free old memory
-        model = new char[strlen(newModel) + 1]; // Allocate new memory
+        this->model = new char[strlen(newModel) + 1]; // Allocate new memory
         strcpy(model, newModel); // Copy new string
     }
 };
