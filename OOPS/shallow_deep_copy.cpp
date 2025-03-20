@@ -17,14 +17,16 @@ public:
     Car(const char* model, int my) {
         this->model = new char[strlen(model) + 1]; // Allocate dynamic memory
         strcpy(this->model, model); // Copy the string
+
         this->modelYear = my;
     }
 
     // COPY CONSTRUCTOR (Deep Copy)
     Car(const Car &myCar) {
         cout << "COPY CONSTRUCTOR (Deep Copy) called!" << endl;
-        model = new char[strlen(myCar.model) + 1]; // Allocate new memory
+        this->model = new char[strlen(myCar.model) + 1]; // Allocate new memory
         strcpy(model, myCar.model); // Copy content
+        
         this->modelYear = myCar.modelYear;
     }
 
