@@ -81,8 +81,16 @@ int main(){
     // COPY CONSTRUCTOR : The copy constructor is a special constructor that creates a new object as a copy of an existing object
     Hero S(50,'A');
     Hero R(S); // R is a copy of S
-
-
+    
+    // COPY ASSIGNMENT OP : 
+    Hero Ravan(100,'S');
+    Hero Naman(90,'A');
+    Naman = Ravan;
+    cout<<"Level of Naman : "<<Naman.getLevel()<<endl;
+    cout<<"Health of Naman : "<<Naman.getHealth()<<endl;
+    Ravan.setHealth(69);
+    cout<<"Health of Naman : "<<Naman.getHealth()<<endl; // its just a copy no reference
+    
 
     return 0;
 }
