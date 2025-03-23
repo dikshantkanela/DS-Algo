@@ -8,6 +8,7 @@
     "utility": "cpp",
     "valarray": "cpp",
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "new": "cpp"
   }
 }
