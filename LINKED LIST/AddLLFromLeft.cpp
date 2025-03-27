@@ -35,11 +35,11 @@ public:
             insertAtTail(res, ansHead, ansTail); // Insert the digit into result list
 
             if (l1 != NULL) {
-                l1 = l1->next; // Move to next node in l1
+                l1 = l1->next; // Move to next node in l1 only if it exists
             }   
 
             if (l2 != NULL) {
-                l2 = l2->next; // Move to next node in l2
+                l2 = l2->next; // Move to next node in l2 only if it exists
             }
         }
         return ansHead; // Return the final result list
