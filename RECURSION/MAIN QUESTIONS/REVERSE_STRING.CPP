@@ -6,13 +6,14 @@ void getReverse(string &s1, int start, int end){
     // base case : 
     if(start>end){
          return; // stop where start exceeds stop
-    }
+    }   
     // processing
     swap(s1[start],s1[end]);
-    start++;
-    end--;
+    return getReverse(s1,start+1,end-1);
+    // start++;
+    // end--;
     // recursive call
-    return getReverse(s1,start,end);
+    
     
 }
 
