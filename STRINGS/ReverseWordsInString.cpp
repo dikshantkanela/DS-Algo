@@ -19,7 +19,7 @@ string reverseWords(string s) {
             i++;
         }
         reverse(word.begin(), word.end());
-        if (word.length() > 0) {
+        if (word.length() > 0) { // very imp.
             ans += " " + word;
         }
     }

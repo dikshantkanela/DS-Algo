@@ -17,6 +17,7 @@ int main(){
     char city[20];
     cout<<"Enter City : ";
     cin>>city; // New Delhi
+    // cin.getline(city,20); // New Delhi
     cout<<"You live in "<< city; //You live in New (If SPACE/TAB is encountered by cin it will add the \0 character and the string will stop there!)
     return 0;
 }

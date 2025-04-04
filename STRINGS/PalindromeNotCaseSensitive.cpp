@@ -15,7 +15,7 @@ bool checkPalindrome(string s, int n){
     int start = 0;
     int end = n-1;
 
-    while(start<=end){
+    while(start<end){
         if(getLowerCase(s[start]) == getLowerCase(s[end])){
             start++;
             end--;

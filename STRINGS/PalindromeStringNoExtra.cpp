@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// Function to check palindrome using extra space
+// Function to check palindrome using no extra space
 bool checkPalindrome(string s, int n) {
     int start = 0;
     int end = n-1;

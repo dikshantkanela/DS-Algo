@@ -7,7 +7,7 @@ using namespace std;
 string removeOccurrences(string s, string part) {
     while (s.find(part) != string::npos) {
         s.erase(s.find(part), part.length());// IF THE PART IS NOT FOUND THEN THE LOOP WILL BREAK SINCE ALL THE SUBSTR PARTS ARE ALREADY REMOVED!
-    }
+    }   
     return s;
 }
 
