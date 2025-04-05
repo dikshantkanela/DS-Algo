@@ -41,10 +41,10 @@ public:
             char ch1 = s[i];
             char ch2 = t[i];
 
-            if (mp1.find(ch1) != mp1.end() && mp1[ch1] != ch2) {
+            if (mp1.find(ch1) != mp1.end() && mp1[ch1] != ch2) { // this check avoids if already mapping exists in mp1 and it is mapping to new element
                 return false; // inconsistent mapping from s to t
             } 
-            else if (mp2.find(ch2) != mp2.end() && mp2[ch2] != ch1) {
+            else if (mp2.find(ch2) != mp2.end() && mp2[ch2] != ch1) {// this check avoids if an element has already a mapping to x element. No two elements should have the same mapping
                 return false; // inconsistent mapping from t to s
             }
 
