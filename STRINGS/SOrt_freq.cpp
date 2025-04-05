@@ -20,7 +20,7 @@ public:
         }
 
         vector<pair<char,int>> vec(mp.begin(),mp.end()); // copying the hasmap into vector of pair since directly sorting hashmap is not possible
-        sort(vec.begin(),vec.end(),[](auto &a, auto &b){
+        sort(vec.begin(),vec.end(),[](auto &a, auto &b){ // lambda func
             return a.second > b.second; // in desc
         });
 
