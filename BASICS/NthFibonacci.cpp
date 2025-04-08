@@ -8,6 +8,12 @@ int main(){
     int first = 0;
     int second = 1;
     int next;
+    if(n==0){
+        return 0;
+    }
+    if(n==1){
+        return 1;
+    }
     for(int i = 2; i<n; i++){ //first two are reserved!
         next = first + second; // 1+0
         first = second; 

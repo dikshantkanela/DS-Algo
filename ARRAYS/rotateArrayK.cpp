@@ -6,7 +6,7 @@ void rotateArray(vector<int>& nums, int k) {
     vector<int> rotatedArray(n);
     
     for (int i = 0; i < n; i++) {
-        rotatedArray[(i + k) % n] = nums[i];
+        rotatedArray[(i + k) % n] = nums[i];    
     }
 
     nums = rotatedArray;

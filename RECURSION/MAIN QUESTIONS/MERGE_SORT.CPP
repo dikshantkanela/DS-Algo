@@ -20,8 +20,14 @@ public:
             }
         }
 
-        while (left <= mid) temp.push_back(nums[left++]);
-        while (right <= high) temp.push_back(nums[right++]);
+        while (left <= mid){
+            temp.push_back(nums[left]);
+            left++;
+        }
+        while (right <= high){
+            temp.push_back(nums[right]);
+            right++;
+        } 
 
         for (int i = low; i <= high; i++) {
             nums[i] = temp[i - low];
