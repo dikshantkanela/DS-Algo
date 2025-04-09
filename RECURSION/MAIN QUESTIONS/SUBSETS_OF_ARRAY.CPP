@@ -15,7 +15,7 @@ public:
     // 🔁 Recursive function to explore all subsets
     void solve(vector<int>& nums, vector<int> output, vector<vector<int>>& ans, int index) {
         // 🛑 Base Case: If we've processed all elements
-        if (index >= nums.size()) {
+        if (index > nums.size()-1) {
             ans.push_back(output);  // Add the current subset to the answer
             return;
         }
