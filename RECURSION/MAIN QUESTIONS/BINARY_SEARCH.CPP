@@ -5,7 +5,7 @@ using namespace std;
 // ya to start stop bhej de ya size!
 int binarySearch(int* arr, int start, int end, int key){
     if(start>end){
-        return -1;
+        return -1; // means element index not found
     }
 
     int mid = start+(end-start)/2;
