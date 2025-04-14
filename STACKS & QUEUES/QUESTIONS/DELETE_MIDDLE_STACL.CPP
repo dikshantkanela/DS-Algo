@@ -8,12 +8,12 @@ void solveRecursive(stack<int>& inputStack, int count, int mid) {
         return;
     }
 
-    int num = inputStack.top();
-    inputStack.pop();
+    int num = inputStack.top(); // store for future 
+    inputStack.pop(); // remove for current 
 
     solveRecursive(inputStack, count + 1, mid);
 
-    inputStack.push(num);
+    inputStack.push(num); // push the stored for future ones back
 }
 
 void deleteMiddleRecursive(stack<int>& inputStack, int N) {
