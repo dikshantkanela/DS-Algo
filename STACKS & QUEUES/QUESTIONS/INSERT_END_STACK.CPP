@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// ****
+// main intent of algo is to empty the entire stack and when it is emptied fill it with the x at the bottom and then backtract with older elements to rebuild!
 void solve(stack<int>& myStack, int x){
     // base case :
     if(myStack.empty()){
