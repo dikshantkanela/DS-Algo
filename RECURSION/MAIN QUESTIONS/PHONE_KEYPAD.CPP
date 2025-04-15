@@ -10,7 +10,7 @@ public:
         if (index > digits.length() - 1) { // base case :
             ans.push_back(output);
             return;
-        }
+        }   
 
         char mappedDigit = digits[index]; // get the first,second...nth element of str and extract the key of the hashmap
         string mappedLetters = mp[mappedDigit]; // get value (the strings we have to use to make pairs) from that key
@@ -35,7 +35,7 @@ public:
         mp['9'] = "wxyz";
 
         vector<string> ans;
-        string output = "";
+        string output = "";     
         int index = 0;
         solve(digits, ans, output, index, mp);
         return ans;
