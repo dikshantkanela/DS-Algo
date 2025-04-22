@@ -68,5 +68,28 @@ public:
 int main(){
     Queue q;
 
+    // Enqueue elements
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    cout << "Enqueued 10, 20, 30" << endl;
+
+    // Show front element
+    cout << "Front element: " << q.front() << endl;  // Should be 10
+
+    // Dequeue elements
+    cout << "Dequeued: " << q.dequeue() << endl;     // Should remove 10
+    cout << "Front element after dequeue: " << q.front() << endl; // Should be 20
+
+    // Dequeue all to make it empty
+    q.dequeue(); // removes 20
+    q.dequeue(); // removes 30
+
+    // Try to dequeue from empty queue
+    cout << "Dequeued from empty queue: " << q.dequeue() << endl; // Should be -1
+
+    // Check if queue is empty
+    cout << "Is queue empty? " << (q.isEmpty() ? "Yes" : "No") << endl;
+
     return 0;
 }
