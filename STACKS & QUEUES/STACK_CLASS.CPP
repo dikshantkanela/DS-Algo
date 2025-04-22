@@ -1,68 +1,65 @@
-#include <bits/stdc++.h> // Includes all standard C++ libraries
-using namespace std;     // Use standard namespace to avoid prefixing std::
+#include<bits/stdc++.h>
+using namespace std;
 
-class Queue {
-public:
-    int* arr;     // Pointer to dynamically allocate array for queue
-    int size;     // Maximum capacity of the queue
-    int qfront;   // Index pointing to the front of the queue
-    int rear;     // Index pointing to the rear (next insertion position)
+class Stack{
+   public:
+   int *arr;
+   int size;
+   int top;
 
-    // Constructor to initialize the queue with size 1000
-    Queue() {
-        this->size = 1000;         // Set default queue size
-        this->arr = new int[size]; // Allocate array dynamically
-        this->qfront = 0;          // Initialize front index to 0
-        this->rear = 0;            // Initialize rear index to 0
+   Stack(int size){
+    this->size = size;
+    this->arr = new int[size];
+    this->top = -1; // initially no element present so -1
+    // top is same as 0 indexing of array
+   }
+
+   void push(int element){
+    if(top>=size-1){
+        cout<<"Stack Overflow";
+    }
+    else{
+        top++; // lines cant be reordered!
+        arr[top] = element;
+    }
+   }
+
+   void pop(){
+    if(top == -1){
+        cout<<"Stack Underflow!";
     }
 
-    // Function to check if the queue is empty
-    bool isEmpty() {
-        if (qfront == rear) { // If front and rear are equal, queue is empty
-            return 1;         // Return true (empty)
-        } else {
-            return 0;         // Return false (not empty)
-        }
+    else{
+        top--;
+    }
+   }
+
+   int peek(){
+    if(top == -1){
+        cout<<"Stack is empty!";
+        return -1;
     }
 
-    // Function to insert an element at the rear of the queue
-    void enqueue(int data) {
-        if (!(rear >= size)) {     // Check if there is space in the queue
-            arr[rear] = data;      // Store data at rear index
-            rear++;                // Move rear to the next position
-        }
-        // If rear >= size, we don't insert (overflow condition silently ignored here)
+    else{
+        return arr[top];
+    }
+   }
+
+   bool empty(){
+    if(top == -1){
+        return true;
     }
 
-    // Function to remove and return the front element from the queue
-    int dequeue() {
-        if (rear == qfront) {      // Check if queue is empty
-            return -1;             // Return -1 if there is nothing to dequeue
-        } else {
-            int ans = arr[qfront]; // Store the front element to return
-            arr[qfront] = -1;      // Optional: mark dequeued slot with -1
-            qfront++;              // Move front to the next element
-
-            // Reset the queue if all elements are removed
-            if (qfront == rear) {
-                qfront = 0;        // Reset front to 0
-                rear = 0;          // Reset rear to 0
-            }
-
-            return ans;            // Return the dequeued value
-        }
+    else{
+        return false;
     }
+   }
 
-    // Function to return the front element without removing it
-    int front() {
-        if (qfront == rear) {      // Check if queue is empty
-            return -1;             // Return -1 if no front element
-        } else {
-            return arr[qfront];    // Return the front element
-        }
-    }
+   int getSize(){
+    return top+1;
+   }
+
 };
-
 
 int main(){
     Stack st(4);
