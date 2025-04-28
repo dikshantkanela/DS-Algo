@@ -3,7 +3,7 @@
 // 2. A hashmap keeps track of character frequencies.
 // 3. For each character in the stream:
 //    - If it's the first time, add it to the queue.
-//    - If it repeats, check the front of the queue and pop characters that now have count > 1.
+//    - If it repeats, check the front of the queue and pop the front that now have count > 1. to ensure that if another character has repeated ater the first popped front it does not be the answer
 // 4. If queue is empty, append '#' to the result. Otherwise, append the front character.
 
 #include <bits/stdc++.h>
