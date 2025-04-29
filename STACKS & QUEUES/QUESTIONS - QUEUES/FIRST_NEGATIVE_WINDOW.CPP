@@ -39,7 +39,7 @@ class Solution {
             }
             // Append result for current window
             if (!dq.empty()) {
-                ans.push_back(arr[dq.front()]);
+                ans.push_back(arr[dq.front()]); 
             } else {
                 ans.push_back(0);
             }
