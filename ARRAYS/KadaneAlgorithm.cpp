@@ -29,7 +29,7 @@ int betterApproach(int arr[], int n){
 }
 
 int KadaneAlgo(int arr[], int n){
-    int maximum = INT_MIN;
+    int maximum = INT_MIN; // for maximum sum
     int currSum = 0;
      
     for(int i=0;i<n;i++){
@@ -38,8 +38,6 @@ int KadaneAlgo(int arr[], int n){
         if(currSum<0){
             currSum = 0;
         }
-        
-        
     }
   return maximum;
 }
