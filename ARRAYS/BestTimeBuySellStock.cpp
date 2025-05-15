@@ -25,8 +25,8 @@ public:
         int maxProfit = 0;
 
         for (int i = 1; i < arr.size(); i++) {
-            maxProfit = max(maxProfit, arr[i] - minSoFar);
             minSoFar = min(minSoFar, arr[i]);
+            maxProfit = max(maxProfit, arr[i] - minSoFar);
         }
 
         return maxProfit;
