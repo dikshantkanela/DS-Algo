@@ -24,6 +24,7 @@ class Hero{
         cout<<"Copy constructor called"<<endl;
         this->health = source.health;
         this->level = source.level;
+
     }
 
     //GETTERS AND SETTERS : 
@@ -46,8 +47,7 @@ class Hero{
 };
 
 int main(){
-    Hero dikshant; // making an OBJECT which is an INSTANCE OF CLASS
-
+    Hero dikshant; // making an OBJECT which is an INSTANCE OF CLASS    
     dikshant.health = 100;
     dikshant.setHealth(101);
     cout<<"Dikshant's Health = "<< dikshant.getHealth()<<endl;
@@ -65,12 +65,14 @@ int main(){
     cout<<"Health of hero a : " <<a.getHealth()<<endl; 
     // dynamic allocation : 
     Hero* b = new Hero;
-    b->setHealth(100);
+    b->setHealth(100); // same as (*b.setHealth(100))
     b->setLevel('S');
     cout<<"Level of hero b : " <<b->getLevel()<<endl; 
     cout<<"Health of hero b : " <<b->getHealth(); 
-    
+   
 
+
+    
     // INSTANTATING OBJECT USING PARAMETERISED CONSTRUCTOR : 
     
     Hero shaktiman(99,'Z');  // Instead of Hero shaktiman = Hero(99,'Z');
@@ -81,6 +83,8 @@ int main(){
     // COPY CONSTRUCTOR : The copy constructor is a special constructor that creates a new object as a copy of an existing object
     Hero S(50,'A');
     Hero R(S); // R is a copy of S
+    R.setHealth(120);
+    cout<<"S HEALTH : "<< S.getHealth()<<endl;
     
     // COPY ASSIGNMENT OP : 
     Hero Ravan(100,'S');

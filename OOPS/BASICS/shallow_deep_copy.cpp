@@ -24,7 +24,6 @@ public:
         cout << "COPY CONSTRUCTOR (Deep Copy) called!" << endl;
         this->model = new char[strlen(myCar.model) + 1]; // Allocate new memory
         strcpy(model, myCar.model); // Copy content
-
         this->modelYear = myCar.modelYear;
     }
 
@@ -42,7 +41,9 @@ public:
 
     // Function to safely update model
     void setModel(const char* newModel) {
-        delete[] model; // Free old memory
+        delete[] model; // Free old memory (old name!!)
+
+        // for new name : allocate new memory and then strcpy!
         this->model = new char[strlen(newModel) + 1]; // Allocate new memory
         strcpy(model, newModel); // Copy new string
     }
@@ -51,7 +52,7 @@ public:
 int main() {
     Car myCar; // Default constructor
 
-    Car Virtus("Virtus", 2024); // Deep Copy Constructor
+    Car Virtus("Virtus", 2024); 
 
     cout << "Original Car Model: " << Virtus.model << endl;
     cout << "Original Car Model Year: " << Virtus.modelYear << endl;

@@ -29,6 +29,9 @@ class Male: private Human{
     int getHeight(){
         return this->height;
     }
+    int getWeight(){
+        return this->weight;
+    }
     void setHeight(int h){
         this->height = h;
     }
@@ -39,6 +42,7 @@ int main(){
 
     Male m1;
     cout<< m1.getHeight();
+    cout<<m1.color;
 
 
     /* 
