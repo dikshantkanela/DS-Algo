@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Animal {
+ class Animal {
 public:
     int height;
     int weight;

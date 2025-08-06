@@ -18,8 +18,8 @@ int main(){
     }
 
     // output column wise : 
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
+    for(int i=0;i<3;i++){ // number of columns here
+        for(int j=0;j<3;j++){ // number of rows here
             cout<< arr[j][i];
         }
         cout<<endl;

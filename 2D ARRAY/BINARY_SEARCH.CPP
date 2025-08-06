@@ -17,7 +17,7 @@ int main(){
             cout<<"Element found at index : "<<mid;
             flag = 1;
             break;
-        }
+        }           
         if(key>arr[mid]){
             start = mid+1;
         }
