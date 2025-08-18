@@ -1,12 +1,7 @@
-class Solution {
-public:
-    int pivotIndex(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> left(n);
-        vector<int> right(n);
-        int leftEle = 0;#include <iostream>
+#include <iostream>
 #include <vector>
 using namespace std;
+
 
 class Solution {
 public:
@@ -58,24 +53,3 @@ int main() {
     return 0;
 }
 
-        int rightEle = 0;
-
-        for(int i=0;i<n;i++){
-            left[i] = leftEle;
-            leftEle += nums[i];
-        }
-
-        for(int i=n-1;i>=0;i--){
-            right[i] = rightEle;
-            rightEle+=nums[i];
-        }
-
-        for(int i=0;i<n;i++){
-            if(right[i] == left[i]){
-                return i;
-            }
-        }
-        return -1;
-
-    }
-};  

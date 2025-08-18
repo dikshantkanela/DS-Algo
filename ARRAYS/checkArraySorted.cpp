@@ -7,7 +7,7 @@ bool arraySortedOrNot(vector<int>& arr) {
     for(int i=0;i<arr.size();i++){
         if(i+1<arr.size() && arr[i+1]<arr[i]){
             sorted = false;
-            return sorted;
+            return sorted; // must
         }
         
         else{

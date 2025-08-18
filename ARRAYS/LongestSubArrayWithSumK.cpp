@@ -14,7 +14,7 @@ int getLongestSubarray(vector<int>& nums, int k) {
             maxLen = max(maxLen, i+1);
         }
 
-        int rem = sum-k;
+            int rem = sum-k;
 
         if (preSumMap.find(rem) != preSumMap.end()) { // IF THE REM EXISTS IN THE ARRAY, USING ITS INDEX FIND THE LENGTH OF THE ARRAY
             int len = i-preSumMap[rem];

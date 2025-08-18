@@ -2,34 +2,28 @@
 using namespace std;
 
 // Function to check if mid^n is equal, greater, or less than m
-int checkPower(int mid, int n, int m) {
-    long long ans = 1;
+class Solution {
+  public:
+    int nthRoot(int n, int m) {
     
-    for (int i = 0; i < n; i++) {
-        ans *= mid;
-        if (ans > m) return 2; // mid^n exceeds m
+        int start = 0;
+        int end = m;
+        long int mid = start+(end-start)/2;
+        
+        while(start<=end){
+            long int sq = pow(mid,n);
+            if(sq>m){
+                end = mid-1;
+            }
+            else if(sq<m){
+                start = mid+1;
+            }
+            
+            else{
+                return mid;
+            }
+             mid = start+(end-start)/2;
+        }
+    return -1;    // return -1 if the root is not integer
     }
-    
-    if (ans == m) return 1; // mid^n equals m
-    return 0; // mid^n is less than m
-}
-
-int NthRoot(int n, int m) {
-    int start = 1, end = m;
-
-    while (start <= end) {
-        int mid = start + (end - start) / 2;
-        int result = checkPower(mid, n, m);
-
-        if (result == 1) return mid;  // Found the exact Nth root
-        else if (result == 2) end = mid - 1;  // Reduce search space
-        else start = mid + 1;  // Increase search space
-    }
-    return -1; // No integer Nth root found
-}
-
-int main() {
-    int n = 5, m = 32768;
-    cout << "The " << n << "th root of " << m << " is: " << NthRoot(n, m) << endl;
-    return 0;
-}
+};

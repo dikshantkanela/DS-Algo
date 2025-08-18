@@ -4,7 +4,7 @@ using namespace std;
 void moveZeros(int arr[], int n) {
     int i = 0; // fills non-zero elements
 
-    for (int j = 0; j < n; j++) { // traverse
+    for (int j = 0; j < n; j++) { // traverse start from 0 else it will do unecessary swaps if 0 is not there in the array!
         if (arr[j]!=0) { // AGAR EK ELEMENT VI 0 NAHI HUA TO SWAP KRDO ith POSITION PE WHICH IS THE POSITION WHERE THE NON_ZERO ELEMENT HAS TO BE THERE
             swap(arr[j], arr[i]);
             i++;

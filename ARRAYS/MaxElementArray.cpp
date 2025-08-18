@@ -29,7 +29,7 @@ public:
         return maxEle;
     }
 
-    // 🟩 Boyer-Moore Voting Algorithm (O(1) space)
+    // 🟩 Boyer-Moore Voting Algorithm (O(1) space) // does work only when the array does have a majority element
     int majorityElementBoyerMoore(vector<int>& nums) {
         int candidate = nums[0];  // Initial candidate
         int count = 0;            // Vote counter

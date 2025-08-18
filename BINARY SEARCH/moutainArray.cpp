@@ -9,7 +9,7 @@ int peakMountain(int arr[], int size){
         if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
             return mid;
         }
-        else if(arr[mid]>arr[mid-1]){ //we are in process of climbing the top
+        else if(arr[mid+1]>arr[mid]){ //we are in process of climbing the top
             start = mid+1;
         }
 
@@ -18,7 +18,7 @@ int peakMountain(int arr[], int size){
         }
         mid = start+(end-start)/2;
     }
-   return mid;
+   return mid; 
 }
 
 

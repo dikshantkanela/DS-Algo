@@ -30,7 +30,7 @@ public:
 
         int i = 0;
         while(zero != 0) {
-            nums[i] = 0;
+            nums[i] = 0;        
             zero--;
             i++;
         }

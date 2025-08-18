@@ -18,7 +18,7 @@ string replaceSpaces(string &str) {
             i++;
         }
         if (str[i] == ' ') { // Replace space with "@40" this condn is needed varna last me bhi krdega!
-            word += "@40";
+            word += "@40";  
         }
     }
     return word;

@@ -27,18 +27,24 @@ int tempRoot(int n){
 }
 
 double precisionRoot(int n, int precision, int tempRoot){
+    long double ans = tempRoot;
     double factor = 1;
-    double ans = tempRoot;
-    for(double i=0;i<precision;i++){
-        factor = factor/10; // 0.1 0.01 0.001
-
-        double root = ans;
-        while(root*root<n){
-            ans = root; //could be the root
-            root=root+factor;
+    
+    
+    for(int i=0;i<precision;i++){
+        long double sq = ans*ans;
+       
+        for(int i=0;i<precision;i++){
+             factor = factor/10;
+             while((ans+factor)*(ans+factor)<=n){
+                 ans+=factor; 
+             }
         }
     }
+   
     return ans;
+
+    
 }
 
 
