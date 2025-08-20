@@ -62,41 +62,43 @@ void insertAtPosition(Node* &head, Node* &tail ,int position, int data){
 }
 
 void deleteAtPosition(Node* &head, Node* &tail, int position){
-    if(position == 1){ // manages for head
-       Node* temp = head;
-       head = temp->next; // new head since the head was deleted
-       delete temp; // free memory
+
+    if(position == 1){
+        Node* temp = head;
+        head = temp->next;
+        delete temp;
     }
 
-
-
     else{
-        Node* prev = head;
         int count = 1;
-        // to find prev position from element to be deleted 
-        while(count<position-1){
+        Node* prev = head;
+
+        while(count<position-1 && prev->next!=NULL){
             prev = prev->next;
             count++;
         }
 
-        if(prev->next == NULL){ // edge case
-            cout<<"Invalid position"<<endl;
+        if(count<position-1){
+            cout<<"Invalid Position Entered!";
             return;
         }
-      
+
+
         Node* nodeToDelete = prev->next;
-        prev->next = nodeToDelete->next;
-        
-       
-        if(nodeToDelete->next == NULL){ // ensures updating the tail when tail is deleted
+        if(nodeToDelete == tail){
             tail = prev;
             prev->next = NULL;
         }
-
-        
-        delete nodeToDelete;
+        else{
+            prev->next = nodeToDelete->next;
+        }
       
+        delete nodeToDelete;
+
+
     }
+    
+
 }
 
 int main(){
