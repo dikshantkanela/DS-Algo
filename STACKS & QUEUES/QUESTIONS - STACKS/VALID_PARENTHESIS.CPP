@@ -11,39 +11,38 @@ using namespace std;
  * @param s String containing parentheses characters
  * @return true if the string is valid, false otherwise
  */
-bool isValid(string s) {
-    stack<char> st;
 
-    for(int i = 0; i < s.length(); i++) {
-        // If we encounter an opening bracket, push it onto the stack
-        if(s[i] == '[' || s[i] == '(' || s[i] == '{') {
-            st.push(s[i]);
+    bool isValid(string s) {
+        stack<char> st;
+
+        for (char ch : s) {
+            if (ch == '(' || ch == '[' || ch == '{') {
+                st.push(ch);
+            }
+
+            else if (ch == ')' || ch == ']' || ch == '}') {
+                if (!st.empty()) {
+                    int top = st.top();
+                    if ((top == '(' && ch == ')' || top == '{' && ch == '}' ||
+                         top == '[' && ch == ']')) {
+                        st.pop();
+
+                    } else {
+                        return false;
+                    }
+
+                } else {
+                    return false;
+                }
+            }
         }
-        // If we encounter a closing bracket
-        else if(s[i] == ']' || s[i] == '}' || s[i] == ')') {
-            // Check if stack is empty (no matching opening bracket)
-            if(st.empty()) {
-                return false;
-            }
-            
-            char top = st.top();
-            
-            // Check if the brackets match
-            if((s[i] == ']' && top != '[') || 
-               (s[i] == '}' && top != '{') || 
-               (s[i] == ')' && top != '(')) {
-                return false;
-            }
-            else {
-                // If brackets match, remove the opening bracket
-                st.pop();
-            }
+        if (st.size() > 0) {
+            return false;
+        } else {
+
+            return true;
         }
     }
-    
-    // If stack is empty, all brackets were properly closed
-    return st.empty();
-}
 
 int main() {
     // Test cases

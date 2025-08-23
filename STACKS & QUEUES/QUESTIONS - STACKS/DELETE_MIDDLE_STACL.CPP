@@ -2,25 +2,36 @@
 using namespace std;
 
 // ------------------ Recursive Approach ------------------
-void solveRecursive(stack<int>& inputStack, int count, int mid) {
-    if (count == mid) {
+#include <bits/stdc++.h> 
+
+void solve(stack<int> & inputStack, int mid, int count){
+    
+    if(count == mid-1){
         inputStack.pop();
         return;
     }
-
-    int num = inputStack.top(); // store for future 
-    inputStack.pop(); // remove for current 
-
-    solveRecursive(inputStack, count + 1, mid);
-
-    inputStack.push(num); // push the stored for future ones back
+    int top = inputStack.top();
+    inputStack.pop();
+    count++;
+    solve(inputStack,mid,count);
+    inputStack.push(top);
 }
 
-void deleteMiddleRecursive(stack<int>& inputStack, int N) {
-    int mid = (N % 2 == 0) ? (N / 2 - 1) : (N / 2);
-    solveRecursive(inputStack, 0, mid);
+void deleteMiddleRecursive(stack<int>& inputStack, int N) { // stack size is N+1
+    // Calculate the middle index
+    int count = 0;
+     
+    if((N+1)%2 == 0){
+        int mid = (N+1)/2;
+        solve(inputStack,mid,count);
+    }
+    else{
+        int mid = (N+2)/2;
+        solve(inputStack,mid,count);
+    }
+    
+   
 }
-
 // ------------------ Iterative Approach (Old) ------------------
 void deleteMiddleIterative(stack<int>& inputStack, int N) {
     int mid = N / 2;
