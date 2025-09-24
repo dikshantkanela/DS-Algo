@@ -36,7 +36,7 @@ void insertAtBottom(stack<int> &stack, int ele) {
     insertAtBottom(stack, ele);
     
     // Push back the saved element
-    stack.push(top);
+    stack.push(top);    
 }
 
 // Function to reverse a stack using recursion

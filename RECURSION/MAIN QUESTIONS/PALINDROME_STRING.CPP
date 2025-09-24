@@ -2,22 +2,27 @@
 using namespace std;
 
 bool checkPalindrome(string &s1,int start, int end){
+    //base case
     if(start>end){
         return true;
     }
     
-    if(s1[start] != s1[end]){
+    //processing (solving one small case of comparing start and end elements)
+    if(s1[start]!=s1[end]){
         return false;
     }
-    else{
-        return checkPalindrome(s1,start+1,end-1); // no need for start++ end--
-    }
-  
 
+
+    else{
+        start++;
+        end--;
+        // recursive call
+        checkPalindrome(s1,start,end);
+    }
 }
 
 int main(){
-    string s1 = "";
+    string s1 = "Nitin";
     cout<<checkPalindrome(s1,0,s1.size()-1);
     return 0;
 }

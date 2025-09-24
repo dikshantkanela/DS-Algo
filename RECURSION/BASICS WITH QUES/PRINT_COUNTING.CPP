@@ -5,29 +5,29 @@ void printCounting(int n){
     if(n == 0){
         return ;
     }
-    
     printCounting(n-1);
-    cout<<n;
-    
-
+    cout<<endl;
+    cout<<n; // since this line(s) will only start executing for every value of n ONLY AFTER n reaches 0 so 1 will be printed first!!
 }
-void reversePrintCounting(int n){
+
+void reverseCounting(int n){
     if(n == 0){
-        return ;
+        return;
     }
-    
-    cout<<n;
-    reversePrintCounting(n-1);
-    
 
+    cout<<n;
+    cout<<endl;
+    reverseCounting(n-1);
 }
+
 
 int main(){
 
     int n;
+    cout<< "Enter a number : "; 
     cin>>n;
     printCounting(n);
-    cout<<endl;
-    reversePrintCounting(n);
+    reverseCounting(n);
+    
     return 0;
 }

@@ -5,68 +5,77 @@ class Solution {
 public:
     // Brute-force Approach: O(n^2)
     int celebrityBruteForce(vector<vector<int>>& mat) {
+        int rows = mat.size();
+        int cols = mat[0].size();
         int ans = -1;
-
-        for (int i = 0; i < mat.size(); i++) {
-            bool everyoneKnowsi = true;
+        
+        for(int i=0;i<rows;i++){
             bool iKnowsNone = true;
-
-            for (int j = 0; j < mat.size(); j++) {
-                if (i != j && mat[i][j] == 1) {
+            bool everyoneKnowsi = true;
+            for(int j=0;j<cols;j++){
+                if(i!=j && mat[i][j] == 1){
                     iKnowsNone = false;
                     break;
                 }
             }
-
-            for (int j = 0; j < mat.size(); j++) {
-                if (i != j && mat[j][i] == 0) {
-                    everyoneKnowsi = false;
-                    break;
+            if(iKnowsNone){
+                for(int k=0;k<rows;k++){
+                    if(mat[k][i] == 0){
+                        everyoneKnowsi = false;
+                    }
                 }
+                if(everyoneKnowsi){
+                    ans = i;
+                }
+                
+                
             }
-
-            if (iKnowsNone && everyoneKnowsi) {
-                return i;
-            }
+            
         }
-        return ans;
+    return ans;
     }
 
     // Stack-based Optimized Approach: O(n)
     int celebrityStack(vector<vector<int>>& mat) {
-        int n = mat.size();
+        int rows = mat.size();
         stack<int> st;
-
-        // Push all candidates
-        for (int i = 0; i < n; i++) {
+        
+        for(int i=0;i<rows;i++){
             st.push(i);
         }
-
-        // Eliminate non-celebrities
-        while (st.size() > 1) {
-            int a = st.top(); st.pop();
-            int b = st.top(); st.pop();
-
-            if (mat[a][b] == 1) {
-                // a knows b => a can't be celeb
-                st.push(b);
-            } else {
-                // a doesn't know b => b can't be celeb
-                st.push(a);
+        
+        while(st.size()>1){
+            int a = st.top();
+            st.pop();
+            int b = st.top();
+            st.pop();
+            
+            if(mat[a][b] == 1){ // a knows b
+                if(mat[b][a] == 0){
+                    st.push(b);
+                }
+                
             }
+            
+            if(mat[b][a] == 1){
+                if(mat[a][b] == 0){
+                    st.push(a);
+                }
+            }
+            
         }
-
-        if (st.empty()) return -1;
+        if(st.empty()){
+            return -1;
+        }
         int candidate = st.top();
-
-        // Validate candidate
-        for (int i = 0; i < n; i++) {
-            if (i != candidate) {
-                if (mat[candidate][i] == 1 || mat[i][candidate] == 0)
+        
+        for(int i=0;i<rows;i++){
+            if(i!=candidate){
+                if(mat[candidate][i] == 1 || mat[i][candidate] == 0){
                     return -1;
+                }
             }
         }
-
         return candidate;
     }
 };

@@ -3,19 +3,16 @@ using namespace std;
 
 // Inserts an element into a sorted stack such that the stack remains sorted (ascending order)
 void insertSorted(stack<int> &stack, int x){
-    if(stack.empty() || x >= stack.top()){ 
-        // if the top of the stack is lower than or equal to the current x then simply push x
+    if(stack.empty() || x>=stack.top()){
         stack.push(x);
         return;
     }
 
-    // otherwise pop the top and recur until correct position is found
     int top = stack.top();
     stack.pop();
-    insertSorted(stack, x);
-    
-    // push the popped element back ONCE X IS CORRECTLY INSERTED
-    stack.push(top);	
+    insertSorted(stack,x);
+    stack.push(top);
+   
 }
 
 // Recursively sorts the stack in ascending order
@@ -24,10 +21,11 @@ void sortStack(stack<int> &stack){
         return;
     }
 
-    int element = stack.top();
-    stack.pop(); // remove the top element
-    sortStack(stack); // recursively sort the remaining stack
-    insertSorted(stack, element); // insert the element back in sorted order
+    int top = stack.top();
+    stack.pop();
+    sortStack(stack);
+    insertSorted(stack,top);
+
 }
 
 int main(){

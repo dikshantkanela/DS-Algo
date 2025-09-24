@@ -2,21 +2,20 @@
 using namespace std;
 
 int factorial(int n){
-    // base case
     if(n == 0){
         return 1;
     }
-    // int smallerProblem = factorial(n-1); // calling+result storing
-    // int biggerProblem = n*smallerProblem;
-    // return biggerProblem;
-    return n * factorial(n-1);
-
+    return n*factorial(n-1);
 }
+
 
 int main(){
     int n;
+    cout<<"Enter the value of n : ";
     cin>>n;
-    int res = factorial(n);
-    cout<<res;
+    int fact = factorial(n);
+    cout<<"Factorial of " << n << " is " << fact;
+
+    
     return 0;
 }
