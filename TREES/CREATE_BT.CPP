@@ -90,12 +90,12 @@ int main(){
     Node* root = createTree();
     cout<<root->data <<endl;
 
-    preOrderTraversal(root);
-    cout<<endl;
-    inOrderTraversal(root);
-    cout<<endl;
-    postOrderTraversal(root);
-    cout<<endl;
+    // preOrderTraversal(root);
+    // cout<<endl;
+    // inOrderTraversal(root);
+    // cout<<endl;
+    // postOrderTraversal(root);
+    // cout<<endl;
 
 
 
