@@ -8,8 +8,10 @@ int main(){
     // int dummy = 100;
     // a = &dummy; // not allowed!!
 
-    // const int *b = new int;  // you can change the address but not the inner content
-    int const* b = new int; // same as above
+    const int *b = new int;  // you can change the address but not the inner content
+    // int const* b = new int; // same as above
+  
+    // *b = 100;
     
     
     

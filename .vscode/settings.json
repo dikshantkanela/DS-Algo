@@ -9,6 +9,7 @@
     "valarray": "cpp",
     "iostream": "cpp",
     "ostream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "vector": "cpp"
   }
 }

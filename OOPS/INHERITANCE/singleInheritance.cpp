@@ -3,6 +3,8 @@ using namespace std;
 
 
 class Animal{
+    protected:
+    int name;
     public:
     int age;
     int weight;
@@ -14,6 +16,7 @@ class Animal{
 };
 
 class Dog: public Animal{
+   
 
 };
 
@@ -22,5 +25,6 @@ class Dog: public Animal{
 int main(){
     Dog sam;
     sam.speak();
+    
     return 0;
 }
