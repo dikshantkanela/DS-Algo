@@ -107,9 +107,72 @@ void levelOrder(Node* root){
     }
 }
 
+void printLeftView(Node* root,vector<int> &view, int level){
+    if(root == NULL){
+        return;
+    }
+
+    if(view.size() == level){
+        view.push_back(root->data);
+        
+    }
+
+    printLeftView(root->left, view, level+1);
+    printLeftView(root->right,view,level+1);
+
+}
+
+void printRightView(Node* root,vector<int>&rightView, int level){
+    if(root == NULL){
+        return;
+    }
+    
+    if(rightView.size() == level){
+        rightView.push_back(root->data);
+    }
+
+    printRightView(root->right,rightView,level+1);
+    printRightView(root->left,rightView,level+1);
+
+
+
+}
+
+// without using vector!
+
+void right(Node* root,int &count,int level){
+    if(root == NULL){
+        return;
+    }
+    if(count == level){
+        cout<<root->data<<" ";
+        count++; // similar to pushing into array!
+    }
+
+    right(root->right,count,level+1);
+    right(root->left,count,level+1);
+}
+
+
 int main(){
     Node* root = createTree();
     levelOrder(root);
+    // int level = 0;
+    // vector<int> view;
+    // printLeftView(root,view,level);
+
+    // for(int i=0;i<view.size();i++){
+    //     cout<<view[i]<<" ";
+    // }
+    // cout<<endl;
+    // vector<int> rightView;
+    // printRightView(root,rightView,level);
+
+    //  for(int i=0;i<rightView.size();i++){
+    //     cout<<rightView[i]<<" ";
+    // }
+    int count = 0;
+    right(root,count,0);
 
     return 0;
 }
