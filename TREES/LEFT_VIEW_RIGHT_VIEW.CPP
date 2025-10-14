@@ -108,6 +108,7 @@ void levelOrder(Node* root){
 }
 
 void printLeftView(Node* root,vector<int> &view, int level){
+    
     if(root == NULL){
         return;
     }
